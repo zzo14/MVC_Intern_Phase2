@@ -15,13 +15,13 @@ React coding examples in ReactExamples.zip:
 *ReactHelloWorld.html: Printing hello world using React
 *ReactTimeline.css: CSS File for Timeline example
 *ReactTimeline.html: React components and container example
-*ReactTimelinePassObject.html: Passing a prop as an attribute and javascript object example
-*ReactTimelinePassArray.html : Passing an array of javascript objects example
+*ReactTimelinePassObject.html: Passing a prop as an attribute and a javascript object example
+*ReactTimelinePassArray.html: Passing an array of javascript objects example
 
 ### Do’s and don’ts
 See the [coding guidelines](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/coding-guidelines) and [FAQ](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/faqs)  
-Please try not to add styles inside the jsx file. Instead, please add your styles to TalentTheme.css.  
-Please use ES6, jsx, use state  
+Please try not to add styles inside the JSX file. Instead, please add your styles to TalentTheme.css.  
+Please use ES6, JSX, and use state  
 Limit your use of javascript or jQuery - jQuery is required for AJAX, but very little else.  
 Use AJAX to get/send data to the controller  
 Please use plain javascript not typescript  
@@ -29,13 +29,13 @@ Please use plain javascript not typescript
 **Don't add any new fields to the Models or add new fields to the documents in the database.**  
 For example,  don't add any new fields to the User or Job models.
 
-**Note : Make sure that you have Visual Studio 2017 installed in your computer.
+**Note: Ensure you have Visual Studio 2017 installed on your computer.
 Visual Studio 2015 does not work with ReactJS**
 
 ### Install react, babel, webpack, js tokens and react tags:
 * Find the folder that contains webpack.config.js in the solution explorer
-* Right click on the folder and select 'Open Folder in File Explorer'
-* Open command prompt (windows + R, type cmd) and go to the folder that contains webpack.config.js (E.g: cd C:\Talent\Talent\Talent.WebApp\Scripts\react)
+* Right-click on the folder and select 'Open Folder in File Explorer'
+* Open the command prompt (windows + R, type cmd) and go to the folder that contains webpack.config.js (E.g: cd C:\Talent\Talent\Talent.WebApp\Scripts\react)
 Install npm util packages:
 `npm install`
 * Check webpack version (make sure it's 4.5.0):
@@ -59,10 +59,10 @@ Install npm util packages:
     - `Talent.Services.Talent` : backend functions related to Talent Matching, Jobs
 
 ### React tips
-* Common coding mistakes using jsx
+* Common coding mistakes using JSX
 * Class names: class (html) => className (jsx), tabindex (html) => tabIndex (jsx)
 * Require closing parent element or fragments: https://reactjs.org/docs/fragments.html
-* Jsx Closing tags differ from html tags, you must have a closing tag for images and inputs: `<img></img>, <input</input>`
+* Jsx Closing tags differ from HTML tags, you must have a closing tag for images and inputs: `<img></img>, <input</input>`
 * Forgetting to turn on webpack : `npm run build`
 * Forgetting to clear the cache
 
@@ -70,17 +70,28 @@ Install npm util packages:
 
 [Click here](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/competition-task) for more details.
 
-* Task 1 : Employer profile page
-  * Add last name to the primary contact details
+* Task 1: Employer profile page
+  * Add the last name to the primary contact details
   * Allow users to edit company contact details by clicking on the edit button
-  * Display the user's full name on primary contact details (for read only display)
-    #### Contact Details Card View
-   ![Contact Details Card View](/show_pics/Task1.png)
-   Here is the view of the employer's contact details, displaying primary and company contact details.
+  * Display the user's full name on primary contact details (for read-only display)
+  #### Task1 - Contact Details Card View
+  ![Contact Details Card View](/show_pics/Task1.png)
+  Here is the view of the employer's contact details, displaying primary and company contact details.
 
-* Task 2 : Manage Job page
+* Task 2: Manage Job page
   * Display jobs as a list of cards
   * Bonus/Optional: Update a job, Close a job
+  #### Task2 - Jobs Card View
+  ![Jobs Card View](/show_pics/Task2-1.png)
+  Here is the view of the Job's summary as a list of cards, displaying the job title, location and summary. Users can filter or sort cards by clicking the dropdown list.
+  
+  #### Task2 Bonus - Update a Job
+  ![Edit Job page](/show_pics/Task2-editJob.png)
+  Here is the view that the employer can update a job by clicking the edit button.
+  
+  #### Task2 Bonus - Close a Job
+  ![Close Job page](/show_pics/Task2-closeJob.png)
+   Here is the view that the employer can close a job by clicking the close button, displaying a popup to confirm whether to close.
     
 * Submitting tasks
   * Please submit tasks the same way you did for Onboarding:
