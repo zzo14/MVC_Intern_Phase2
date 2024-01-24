@@ -2,7 +2,7 @@
 
 This project will help interns at MVP Studio to understand how ReactJs, C# Web Api, MongoDb is used in Talent Code Architecture. 
 
-Please follow the instructions below to understand how to get started. If you have any questions, please check if it's asked on QuestionHub or raise the question there to get support. 
+Please follow the instructions below to understand how to get started. 
 
 ### React tutorials/resources
 * https://reactjs.org/docs/hello-world.html
@@ -64,9 +64,6 @@ Install npm util packages:
 * Forgetting to turn on webpack : `npm run build`
 * Forgetting to clear the cache
 
-### How to connect to the database
-[Click here](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/mongo-db) for more details.
-
 ## Competition task
 
 [Click here](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/competition-task) for more details.
@@ -79,6 +76,7 @@ Install npm util packages:
 * Task 2 : Manage Job page
   * Display jobs as a list of cards
   * Bonus/Optional: Update a job, Close a job
+    
 * Submitting tasks
   * Please submit tasks the same way you did for Onboarding:
   * Upload code to your personal GitHub account
