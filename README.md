@@ -74,6 +74,8 @@ Install npm util packages:
   * Add last name to the primary contact details
   * Allow users to edit company contact details by clicking on the edit button
   * Display the user's full name on primary contact details (for read only display)
+  * ![Contact Details Card View](/show_pics/Task1.png)
+     *  *  Here is the view of the employer's contact details, displaying primary and company contact details.
 
 * Task 2 : Manage Job page
   * Display jobs as a list of cards
@@ -84,4 +86,3 @@ Install npm util packages:
   * Upload code to your personal GitHub account
   * Deploy a copy to Azure
   * Notify your mentor using the industryconnect.io internship portal
-
