@@ -91,7 +91,7 @@ Install npm util packages:
   
   #### Task2 Bonus - Close a Job
   ![Close Job page](/show_pics/Task2-closeJob.png)
-   Here is the view that the employer can close a job by clicking the close button, displaying a popup to confirm whether to close.
+  Here is the view that the employer can close a job by clicking the close button, displaying a popup to confirm whether to close.
     
 * Submitting tasks
   * Please submit tasks the same way you did for Onboarding:
