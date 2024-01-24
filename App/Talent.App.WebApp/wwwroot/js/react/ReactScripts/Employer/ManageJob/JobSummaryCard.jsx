@@ -2,6 +2,7 @@
 import Cookies from 'js-cookie';
 import { Card, Button, Icon, Label, Popup, ButtonGroup, CardGroup, Grid } from 'semantic-ui-react';
 import moment from 'moment';
+import { withRouter } from 'react-router-dom'; 
 
 export class JobSummaryCard extends React.Component {
     constructor(props) {
@@ -11,12 +12,12 @@ export class JobSummaryCard extends React.Component {
         };
         this.selectJob = this.selectJob.bind(this);
         this.togglePopup = this.togglePopup.bind(this);
+        this.navigateToEditJob = this.navigateToEditJob.bind(this);
     }
 
     selectJob(id) {
-        console.log(id);
         var cookies = Cookies.get('talentAuthToken');
-        var link = 'http://localhost:51689/listing/listing/closeJob';
+        var link = 'https://talentservicestalent20240123184103.azurewebsites.net/listing/listing/closeJob';
 
         $.ajax({
             url: link,
@@ -43,6 +44,10 @@ export class JobSummaryCard extends React.Component {
         this.setState(prevState => ({
             isPopupOpen: !prevState.isPopupOpen
         }));
+    }
+
+    navigateToEditJob(id) {
+        this.props.history.push(`/EditJob/${id}`);
     }
 
     render() {
@@ -76,14 +81,15 @@ export class JobSummaryCard extends React.Component {
                                     <Button
                                         className="ui button job-summary"
                                         onClick={() => this.selectJob(id)}
-                                        color='green'
-                                        size='mini'
-                                        floated="right">Yes</Button>
-                                    <Button
-                                        onClick={this.togglePopup}
                                         color='red'
                                         size='mini'
-                                        floated="right">No</Button>
+                                        floated="right">Close it</Button>
+                                    <Button
+                                        className="ui button job-summary"
+                                        onClick={this.togglePopup}
+                                        color='green'
+                                        size='mini'
+                                        floated="right">Not now</Button>
                                 </div>
                             }
                             open={this.state.isPopupOpen}
@@ -93,7 +99,7 @@ export class JobSummaryCard extends React.Component {
                             position='top left'
                         >
                         </Popup>
-                        <Button icon="edit outline" content="Edit" basic color='blue' />
+                        <Button icon="edit outline" content="Edit" basic color='blue' onClick={ () => this.navigateToEditJob(id) } />
                         <Button icon="copy outline" content="Copy" basic color='blue' />
                     </ButtonGroup>
                 </Card.Content>

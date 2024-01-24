@@ -5,7 +5,8 @@ import LoggedInBanner from '../../Layout/Banner/LoggedInBanner.jsx';
 import { LoggedInNavigation } from '../../Layout/LoggedInNavigation.jsx';
 import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
-import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Card} from 'semantic-ui-react';
+import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Card } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom'; 
 
 export default class ManageJob extends React.Component {
     constructor(props) {
@@ -58,7 +59,7 @@ export default class ManageJob extends React.Component {
     };
 
     loadData(callback) {
-        var link = 'http://localhost:51689/listing/listing/getSortedEmployerJobs';
+        var link = 'https://talentservicestalent20240123184103.azurewebsites.net/listing/listing/getSortedEmployerJobs';
         var cookies = Cookies.get('talentAuthToken');
         const { activePage, sortBy, filter } = this.state;
         var params = new URLSearchParams({
@@ -169,7 +170,7 @@ export default class ManageJob extends React.Component {
                             <div className="row">
                                 {this.state.loadJobs.length > 0 ? (<Card.Group itemsPerRow={3}>
                                     {this.state.loadJobs.map(job => (
-                                        <JobSummaryCard key={job.id} job={job} />
+                                        <JobSummaryCard key={job.id} job={job} history={this.props.history} />
                                     ))}
                                 </Card.Group>) : (<span>No Jobs Found</span>)}
                             </div>

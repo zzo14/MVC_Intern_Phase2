@@ -36,7 +36,8 @@ export default class CreateJob extends React.Component {
                     location: { country: "", city: ""}
                 }
             },
-            loaderData: loaderData
+            loaderData: loaderData,
+            isEditMode: false,
         }
         
         this.updateStateData = this.updateStateData.bind(this);
@@ -66,8 +67,8 @@ export default class CreateJob extends React.Component {
         var copyJobParam = this.props.match.params.copyId ? this.props.match.params.copyId : "";
 
         if (param != "" || copyJobParam != "") {
-            var link = param != "" ? 'http://localhost:51689/listing/listing/GetJobByToEdit?id=' + param
-                : 'http://localhost:51689/listing/listing/GetJobForCopy?id=' + copyJobParam;
+            var link = param != "" ? 'https://talentservicestalent20240123184103.azurewebsites.net/listing/listing/GetJobByToEdit?id=' + param
+                : 'https://talentservicestalent20240123184103.azurewebsites.net/listing/listing/GetJobForCopy?id=' + copyJobParam;
             var cookies = Cookies.get('talentAuthToken');
             $.ajax({
                 url: link,
@@ -85,9 +86,13 @@ export default class CreateJob extends React.Component {
                         res.jobData.expiryDate = res.jobData.expiryDate
                             ? moment(res.jobData.expiryDate) > moment()
                                 ? moment(res.jobData.expiryDate) : moment().add(14,'days') : null;
-                        this.setState({ jobData: res.jobData })
+                        this.setState({
+                            jobData: res.jobData,
+                            isEditMode: true,
+                        })
                     } else {
                         TalentUtil.notification.show(res.message, "error", null, null)
+                        this.setState({ isEditMode: false, })
                     }
                 }.bind(this)
             })
@@ -100,7 +105,7 @@ export default class CreateJob extends React.Component {
         console.log("date:", jobData.jobDetails.startDate);
         var cookies = Cookies.get('talentAuthToken');   
         $.ajax({
-            url: 'http://localhost:51689/listing/listing/createUpdateJob',
+            url: 'https://talentservicestalent20240123184103.azurewebsites.net/listing/listing/createUpdateJob',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
                 'Content-Type': 'application/json'
@@ -138,7 +143,7 @@ export default class CreateJob extends React.Component {
                         <div className="ui grid">
                             <div className="row">
                                 <div className="sixteen wide center aligned padded column">
-                                    <h1>Create Job</h1>
+                                    { this.state.isEditMode ? <h1>Edit Job</h1> : <h1>Create Job</h1> }
                                 </div>
                             </div>
 
