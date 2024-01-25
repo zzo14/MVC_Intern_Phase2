@@ -184,10 +184,10 @@ export default class ManageJob extends React.Component {
                                         firstItem={null}
                                         lastItem={null}
                                         ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
-                                        firstItem={{ content: <Icon name='angle double left' />, icon: true }}
-                                        lastItem={{ content: <Icon name='angle double right' />, icon: true }}
-                                        prevItem={{ content: <Icon name='angle left' />, icon: true }}
-                                        nextItem={{ content: <Icon name='angle right' />, icon: true }}
+                                        firstItem={{ content: <Icon name='angle double left' />, icon: true, disabled: this.state.activePage === 1 }}
+                                        lastItem={{ content: <Icon name='angle double right' />, icon: true, disabled: this.state.activePage === this.state.totalPages }}
+                                        prevItem={{ content: <Icon name='angle left' />, icon: true, disabled: this.state.activePage === 1 }}
+                                        nextItem={{ content: <Icon name='angle right' />, icon: true, disabled: this.state.activePage === this.state.totalPages }}
                                     />
                                 </div>
                             </div>
