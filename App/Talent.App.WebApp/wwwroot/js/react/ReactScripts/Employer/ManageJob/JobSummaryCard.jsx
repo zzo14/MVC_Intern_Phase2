@@ -47,7 +47,7 @@ export class JobSummaryCard extends React.Component {
     }
 
     navigateToEditJob(id) {
-        this.props.history.push(`/EditJob/${id}`);
+        window.location =`/EditJob/${id}`;
     }
 
     render() {

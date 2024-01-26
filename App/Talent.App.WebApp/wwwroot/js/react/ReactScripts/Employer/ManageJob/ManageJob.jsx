@@ -170,7 +170,7 @@ export default class ManageJob extends React.Component {
                             <div className="row">
                                 {this.state.loadJobs.length > 0 ? (<Card.Group itemsPerRow={3}>
                                     {this.state.loadJobs.map(job => (
-                                        <JobSummaryCard key={job.id} job={job} history={this.props.history} />
+                                        <JobSummaryCard key={job.id} job={job} />
                                     ))}
                                 </Card.Group>) : (<span>No Jobs Found</span>)}
                             </div>
