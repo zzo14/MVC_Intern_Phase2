@@ -37,7 +37,6 @@ export default class CreateJob extends React.Component {
                 }
             },
             loaderData: loaderData,
-            isEditMode: false,
         }
         
         this.updateStateData = this.updateStateData.bind(this);
@@ -86,13 +85,9 @@ export default class CreateJob extends React.Component {
                         res.jobData.expiryDate = res.jobData.expiryDate
                             ? moment(res.jobData.expiryDate) > moment()
                                 ? moment(res.jobData.expiryDate) : moment().add(14,'days') : null;
-                        this.setState({
-                            jobData: res.jobData,
-                            isEditMode: true,
-                        })
+                        this.setState({ jobData: res.jobData })
                     } else {
                         TalentUtil.notification.show(res.message, "error", null, null)
-                        this.setState({ isEditMode: false, })
                     }
                 }.bind(this)
             })
@@ -136,6 +131,17 @@ export default class CreateJob extends React.Component {
     }
    
     render() {
+
+        // from best solution
+        let pageHeader;
+        if (this.props.match.params.id) {
+            pageHeader = 'Edit Job';
+        } else if (this.props.match.params.copyId) {
+            pageHeader = 'Copy Job';
+        } else {
+            pageHeader = 'Create Job';
+        }
+
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>
                 <section className="page-body">
@@ -143,7 +149,7 @@ export default class CreateJob extends React.Component {
                         <div className="ui grid">
                             <div className="row">
                                 <div className="sixteen wide center aligned padded column">
-                                    { this.state.isEditMode ? <h1>Edit Job</h1> : <h1>Create Job</h1> }
+                                    <h1>{pageHeader}</h1>
                                 </div>
                             </div>
 

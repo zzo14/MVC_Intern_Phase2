@@ -12,7 +12,7 @@ export class JobSummaryCard extends React.Component {
         };
         this.selectJob = this.selectJob.bind(this);
         this.togglePopup = this.togglePopup.bind(this);
-        this.navigateToEditJob = this.navigateToEditJob.bind(this);
+        //this.navigateToEditJob = this.navigateToEditJob.bind(this);
     }
 
     selectJob(id) {
@@ -28,6 +28,7 @@ export class JobSummaryCard extends React.Component {
             type: "POST",
             contentType: "application/json",
             dataType: "json",
+            //data: `"${id}"`, 
             data: JSON.stringify(id),
             success: function (res) {
                 if (res.success == true) {
@@ -46,9 +47,9 @@ export class JobSummaryCard extends React.Component {
         }));
     }
 
-    navigateToEditJob(id) {
-        window.location =`/EditJob/${id}`;
-    }
+    //navigateToEditJob(id) {
+    //    window.location =`/EditJob/${id}`;
+    //}
 
     render() {
         const { job } = this.props; // Assuming job data is passed as a prop
@@ -99,8 +100,9 @@ export class JobSummaryCard extends React.Component {
                             position='top left'
                         >
                         </Popup>
-                        <Button icon="edit outline" content="Edit" basic color='blue' onClick={ () => this.navigateToEditJob(id) } />
-                        <Button icon="copy outline" content="Copy" basic color='blue' />
+                        {/*<Button icon="edit outline" content="Edit" basic color='blue' onClick={() => this.navigateToEditJob(id)} />*/}
+                        <Button icon="edit outline" content="Edit" basic color='blue' href={'/EditJob/' + id} />
+                        <Button icon="copy outline" content="Copy" basic color='blue' href={'/PostJob/' + id} />
                     </ButtonGroup>
                 </Card.Content>
             </Card>
