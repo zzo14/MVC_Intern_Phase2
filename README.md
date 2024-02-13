@@ -1,4 +1,4 @@
-# MVC_Intern_Phase2 - Competition task
+# MVP_Intern_Phase2 - Competition task
 
 ## Talent Competition Code Repository
 
