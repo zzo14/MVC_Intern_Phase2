@@ -6,32 +6,6 @@ This project will help interns at MVP Studio to understand how ReactJs, C# Web A
 
 Please follow the instructions below to understand how to get started. 
 
-### React tutorials/resources
-* https://reactjs.org/docs/hello-world.html
-* MVP Studio React Training.pdf can be found here
-ReactExamples.zip can be found [here](https://drive.google.com/file/d/1dXZeb3hmMsYbE1hmGEkb4_hyOkNiAbPa/view?usp=sharing)
-
-React coding examples in ReactExamples.zip:
-*ReactHelloWorld.html: Printing hello world using React
-*ReactTimeline.css: CSS File for Timeline example
-*ReactTimeline.html: React components and container example
-*ReactTimelinePassObject.html: Passing a prop as an attribute and a javascript object example
-*ReactTimelinePassArray.html: Passing an array of javascript objects example
-
-### Do’s and don’ts
-See the [coding guidelines](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/coding-guidelines) and [FAQ](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/faqs)  
-Please try not to add styles inside the JSX file. Instead, please add your styles to TalentTheme.css.  
-Please use ES6, JSX, and use state  
-Limit your use of javascript or jQuery - jQuery is required for AJAX, but very little else.  
-Use AJAX to get/send data to the controller  
-Please use plain javascript not typescript  
-
-**Don't add any new fields to the Models or add new fields to the documents in the database.**  
-For example,  don't add any new fields to the User or Job models.
-
-**Note: Ensure you have Visual Studio 2017 installed on your computer.
-Visual Studio 2015 does not work with ReactJS**
-
 ### Install react, babel, webpack, js tokens and react tags:
 * Find the folder that contains webpack.config.js in the solution explorer
 * Right-click on the folder and select 'Open Folder in File Explorer'
@@ -40,14 +14,6 @@ Install npm util packages:
 `npm install`
 * Check webpack version (make sure it's 4.5.0):
 `webpack -version`
-
-### Launch Talent project
-[Check the wiki](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/Starting-the-project) for more details.
-* Get the latest source via Source Control Explorer
-* Run webpack:
-`cd C:\Talent\Talent\App\Talent.App.WebApp\wwwroot\js\react`
-`npm run build`
-* Launch Talent.WebApp project in Visual Studio. Register an account using your email address and log in.
 
 ### Project Structure  
 [Check the wiki](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/project-structure) for more details.
@@ -58,17 +24,9 @@ Install npm util packages:
     - `Talent.Services.Profile` : backend functions related to Profile
     - `Talent.Services.Talent` : backend functions related to Talent Matching, Jobs
 
-### React tips
-* Common coding mistakes using JSX
-* Class names: class (html) => className (jsx), tabindex (html) => tabIndex (jsx)
-* Require closing parent element or fragments: https://reactjs.org/docs/fragments.html
-* Jsx Closing tags differ from HTML tags, you must have a closing tag for images and inputs: `<img></img>, <input</input>`
-* Forgetting to turn on webpack : `npm run build`
-* Forgetting to clear the cache
+### Competition task
 
-## Competition task
-
-[Click here](http://git.mvp.studio/talent-competition/talent-competition/wikis/guides/competition-task) for more details.
+[Click here](https://talentappwebapp20240123195850.azurewebsites.net/Home) for Showcase.
 
 * Task 1: Employer profile page
   * Add the last name to the primary contact details
